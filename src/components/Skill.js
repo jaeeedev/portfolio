@@ -37,8 +37,10 @@ const SkillItem = styled.div`
 `;
 
 const SkillImg = styled.img.attrs({ alt: "기술 이미지" })`
+  width: 100px;
   height: 100px;
   display: block;
+  transition: all 0.6s;
 `;
 
 const SkillText = styled.p`
@@ -47,13 +49,24 @@ const SkillText = styled.p`
 `;
 
 function Skill() {
+  function up(e) {
+    e.target.style.transform = "translateY(-4px)";
+  }
+  function down(e) {
+    e.target.style.transform = "translateY(0px)";
+  }
+
   return (
-    <Wrapper>
+    <Wrapper id="2">
       <SkillContents>
         <Title>SKILL</Title>
         <SkillBox>
           <SkillItem>
-            <SkillImg src="/imgs/html.png" />
+            <SkillImg
+              src="/imgs/html.png"
+              onMouseEnter={up}
+              onMouseLeave={down}
+            />
             <SkillText>
               컨텐츠에 적절한 시맨틱 태그 사용
               <br />
@@ -63,7 +76,11 @@ function Skill() {
             </SkillText>
           </SkillItem>
           <SkillItem>
-            <SkillImg src="/imgs/css.png" />
+            <SkillImg
+              src="/imgs/css.png"
+              onMouseEnter={up}
+              onMouseLeave={down}
+            />
             <SkillText>
               플렉스를 사용하여 스타일링 가능
               <br />
@@ -71,7 +88,11 @@ function Skill() {
             </SkillText>
           </SkillItem>
           <SkillItem>
-            <SkillImg src="/imgs/js.png" />
+            <SkillImg
+              src="/imgs/js.png"
+              onMouseEnter={up}
+              onMouseLeave={down}
+            />
             <SkillText>
               ES6 문법 사용
               <br />
@@ -79,7 +100,11 @@ function Skill() {
             </SkillText>
           </SkillItem>
           <SkillItem>
-            <SkillImg src="/imgs/logo512.png" />
+            <SkillImg
+              src="/imgs/logo512.png"
+              onMouseEnter={up}
+              onMouseLeave={down}
+            />
             <SkillText>
               스타일드 컴포넌트로 prop에 따른 조건부 스타일링
               <br />

@@ -18,13 +18,22 @@ const ProjectItemBox = styled.div`
   display: flex;
   gap: 30px;
   margin-bottom: 40px;
-  opacity: 0;
+  opacity: 1;
   transition: all 1.1s;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
-const ProjectImg = styled.img`
+const ProjectImg = styled.div`
   flex: 1;
   background: black;
+  min-height: 250px;
+  object-fit: cover;
+  transition: all 0.4s;
+
+  @media screen and (max-width: 650px) {
+  }
 `;
 
 const ProjectText = styled.div`
@@ -79,11 +88,11 @@ function Project() {
 
   return (
     <div>
-      <ProjectContents>
+      <ProjectContents id="3">
         <Title>PROJECT</Title>
 
         <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
-          <ProjectImg />
+          <ProjectImg></ProjectImg>
 
           <ProjectText>
             <TextTitle mb={"20px"}>투두리스트</TextTitle>
@@ -99,7 +108,11 @@ function Project() {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a href="#!">
+              <a
+                href="https://github.com/jaeeedev/todolist/tree/jaeeedev-patch-3"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <BsGithub />
               </a>
             </TextDetail>

@@ -71,11 +71,11 @@ const DecoCircle = styled.div`
 function Intro() {
   return (
     <div>
-      <IntroContents>
+      <IntroContents id="1">
         <DecoCircle />
         <IntroGreetBox>
           <GreetText>안녕하세요</GreetText>
-          <GreetText>신입 프론트엔드 개발자</GreetText>
+          <GreetText>ㅇㅇ하는 프론트엔드 개발자</GreetText>
           <GreetText>박지은입니다.</GreetText>
           <GreetDetail>
             자기 소개 포부 적는 영역
@@ -110,7 +110,11 @@ function Intro() {
           <Info>
             <InfoTitle>깃허브</InfoTitle>
             <InfoDetail>
-              <a href="#!">
+              <a
+                href="https://github.com/jaeeedev"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsGithub
                   style={{ fontSize: "23px", transform: "translateY(5px)" }}
                 />

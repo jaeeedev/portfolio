@@ -22,7 +22,7 @@ const Text = styled.p`
 
 function Footer() {
   return (
-    <Wrapper>
+    <Wrapper id="4">
       <div>
         <Title>CONTACT</Title>
         <Text>wldms1107@gmail.com</Text>
