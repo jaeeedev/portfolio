@@ -58,14 +58,10 @@ const HeaderMenus = styled.ul`
 
 const Li = styled.li`
   font-weight: ${(props) => props.current && "600"};
-  color: ${(props) => props.current && "blue"};
+  color: ${(props) => props.boldIndex && "blue"};
   line-height: 47px;
   cursor: pointer;
   font-weight: 600;
-
-  &:active {
-    color: blue;
-  }
 `;
 
 const MobileMenuIcon = styled.span`
@@ -102,13 +98,10 @@ const MobileMenuLi = styled.li`
   font-weight: 700;
   margin: 0 20px;
   cursor: pointer;
-
-  &:active {
-    color: blue;
-  }
+  color: ${({ boldIndex }) => boldIndex && "blue"};
 `;
 
-function Header() {
+function Header({ boldIndex }) {
   const [two, setTwo] = useState(false);
   //스크롤 100픽셀 아래로 가면 true로 만들어버리기
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
@@ -143,16 +136,16 @@ function Header() {
         <HeaderLogo>PORTFOLIO</HeaderLogo>
         <HeaderMenus two={two}>
           <Link to="1" spy={true} smooth={true}>
-            <Li>INTRO</Li>
+            <Li boldIndex={boldIndex === 0}>INTRO</Li>
           </Link>
           <Link to="2" spy={true} smooth={true}>
-            <Li>SKILL</Li>
+            <Li boldIndex={boldIndex === 1}>SKILL</Li>
           </Link>
           <Link to="3" spy={true} smooth={true}>
-            <Li>PROJECT</Li>
+            <Li boldIndex={boldIndex === 2}>PROJECT</Li>
           </Link>
           <Link to="4" spy={true} smooth={true}>
-            <Li>CONTACT</Li>
+            <Li boldIndex={boldIndex === 3}>CONTACT</Li>
           </Link>
         </HeaderMenus>
         <MobileMenuIcon two={two} onClick={toggleMobileMenu}>
@@ -160,16 +153,16 @@ function Header() {
         </MobileMenuIcon>
         <MobileMenu show={openMobileMenu} two={two}>
           <Link to="1" spy={true} smooth={true}>
-            <MobileMenuLi>INTRO</MobileMenuLi>
+            <MobileMenuLi boldIndex={boldIndex === 0}>INTRO</MobileMenuLi>
           </Link>
           <Link to="2" spy={true} smooth={true}>
-            <MobileMenuLi>SKILL</MobileMenuLi>
+            <MobileMenuLi boldIndex={boldIndex === 1}>SKILL</MobileMenuLi>
           </Link>
           <Link to="3" spy={true} smooth={true}>
-            <MobileMenuLi>PROJECT</MobileMenuLi>
+            <MobileMenuLi boldIndex={boldIndex === 2}>PROJECT</MobileMenuLi>
           </Link>
           <Link to="4" spy={true} smooth={true}>
-            <MobileMenuLi>CONTACT</MobileMenuLi>
+            <MobileMenuLi boldIndex={boldIndex === 3}>CONTACT</MobileMenuLi>
           </Link>
         </MobileMenu>
       </InnerHeader>

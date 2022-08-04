@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-
 const Wrapper = styled.section`
   background: #f3f3f3;
   padding: 30px;
@@ -20,9 +19,26 @@ const Text = styled.p`
   font-size: ${(props) => props.fz || "16px"};
 `;
 
-function Footer() {
+function Footer({ boldHandler }) {
+  const contactRef = useRef(null);
+
+  const cb = ([entry]) => {
+    if (entry.isIntersecting) {
+      boldHandler(3);
+    }
+  };
+
+  const introIo = new IntersectionObserver(cb, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    introIo.observe(contactRef.current);
+  });
   return (
-    <Wrapper id="4">
+    <Wrapper id="4" ref={contactRef}>
       <div>
         <Title>CONTACT</Title>
         <Text>wldms1107@gmail.com</Text>

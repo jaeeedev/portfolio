@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { useRef, useEffect } from "react";
 
 const Wrapper = styled.section`
   background: #f3f3f3;
+  padding-top: 5px;
 
   @media screen and (max-width: 650px) {
     background: transparent;
@@ -48,7 +50,26 @@ const SkillText = styled.p`
   font-size: 15px;
 `;
 
-function Skill() {
+function Skill({ boldHandler }) {
+  const skillRef = useRef(null);
+
+  const cb = ([entry]) => {
+    if (entry.isIntersecting) {
+      boldHandler(1);
+    }
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const introIo = new IntersectionObserver(cb, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7,
+  });
+
+  useEffect(() => {
+    introIo.observe(skillRef.current);
+  }, [introIo]);
+
   function up(e) {
     e.target.style.transform = "translateY(-4px)";
   }
@@ -57,7 +78,7 @@ function Skill() {
   }
 
   return (
-    <Wrapper id="2">
+    <Wrapper id="2" ref={skillRef}>
       <SkillContents>
         <Title>SKILL</Title>
         <SkillBox>
@@ -110,7 +131,7 @@ function Skill() {
               <br />
               리덕스 라우터를 활용하여 다중 페이지 구현
               <br />
-              리덕스(툴킷) 를 통해 전역 상태 관리를 할 수 있음
+              리덕스(툴킷) 를 통한 전역 상태 관리 경험
             </SkillText>
           </SkillItem>
         </SkillBox>

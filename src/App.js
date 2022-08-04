@@ -1,20 +1,22 @@
+import React from "react";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
 import Project from "./components/Project";
 import Skill from "./components/Skill";
 import Footer from "./components/Footer";
-
-//여기서 io를 써서 들어오면 상태 바꿔주고 상태는 헤더에 prop으로 내려서 색상 변경
-//함수형 컴포넌트는 ref를 못쓴다는데 들어온걸 어떻게 확인하지
+import { useState } from "react";
 
 function App() {
+  const [boldIndex, setBoldIndex] = useState(0);
+
+  //개개별 컴포넌트로 들어가서 옵저버 걸어주고 색바꾸셈 어쩔수업다...
   return (
     <div>
-      <Header />
-      <Intro />
-      <Skill />
-      <Project />
-      <Footer />
+      <Header boldIndex={boldIndex} />
+      <Intro boldHandler={setBoldIndex} />
+      <Skill boldHandler={setBoldIndex} />
+      <Project boldHandler={setBoldIndex} />
+      <Footer boldHandler={setBoldIndex} />
     </div>
   );
 }

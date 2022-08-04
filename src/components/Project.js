@@ -6,7 +6,9 @@ import { useEffect, useMemo, useRef } from "react";
 const ProjectContents = styled.section`
   max-width: 1260px;
   margin: 120px auto;
+  margin-top: 30px;
   padding: 20px;
+  padding-top: 80px;
 `;
 
 const Title = styled.h3`
@@ -53,7 +55,7 @@ const TextDetail = styled.p`
   margin-bottom: 10px;
 `;
 
-function Project() {
+function Project({ boldHandler }) {
   const projectRef = useRef([]);
 
   const observer = useMemo(
@@ -61,7 +63,7 @@ function Project() {
       new IntersectionObserver(projectHandler, {
         root: null,
         rootMargin: "0px",
-        threshold: 0.5,
+        threshold: 0.6,
       }),
     []
   );
@@ -72,6 +74,7 @@ function Project() {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(10px)";
+        boldHandler(2);
       } else {
         entry.target.style.opacity = "0";
         entry.target.style.transform = "translateY(0)";
@@ -99,8 +102,7 @@ function Project() {
             <TextDetail>
               가장 기초가 되는 글쓰기, 수정, 삭제 기능 구현을 공부하기 위해
               제작하였습니다. 배열과 map 메서드를 사용하여 데이터를 저장,
-              렌더링하고 로컬 스토리지를 사용하여 체크 여부와 텍스트가
-              저장됩니다.
+              출력하고 로컬 스토리지를 사용하여 체크 여부와 텍스트가 저장됩니다.
             </TextDetail>
 
             <TextTitle>사용 기술</TextTitle>
@@ -174,7 +176,12 @@ function Project() {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a href="#!">
+              <a
+                href="https://github.com/jaeeedev/work"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ marginRight: "10px" }}
+              >
                 <BsGithub />
               </a>
             </TextDetail>
@@ -199,11 +206,21 @@ function Project() {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a href="#!" style={{ marginRight: "10px" }}>
-                <BsGithub />
-              </a>
-              <a href="#!">
+              <a
+                href="https://illustrious-manatee-d6fc25.netlify.app/"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ marginRight: "10px" }}
+              >
                 <RiComputerLine />
+              </a>
+              <a
+                href="https://github.com/jaeeedev/seoulbund"
+                style={{ marginRight: "10px" }}
+                target={"_blank"}
+                rel="noreferrer"
+              >
+                <BsGithub />
               </a>
             </TextDetail>
           </ProjectText>

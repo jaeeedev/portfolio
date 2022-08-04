@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
+import { useEffect, useRef } from "react";
 
 const IntroContents = styled.section`
   position: relative;
@@ -8,6 +9,7 @@ const IntroContents = styled.section`
   display: flex;
   gap: 40px;
   align-items: center;
+  padding-top: 60px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column;
@@ -68,9 +70,27 @@ const DecoCircle = styled.div`
   z-index: -1;
 `;
 
-function Intro() {
+function Intro({ boldHandler }) {
+  const introRef = useRef(null);
+
+  const cb = ([entry]) => {
+    if (entry.isIntersecting) {
+      boldHandler(0);
+    }
+  };
+
+  const introIo = new IntersectionObserver(cb, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    introIo.observe(introRef.current);
+  });
+
   return (
-    <div>
+    <div ref={introRef}>
       <IntroContents id="1">
         <DecoCircle />
         <IntroGreetBox>
