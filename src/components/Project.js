@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { BsGithub } from "react-icons/bs";
-import { RiComputerLine } from "react-icons/ri";
+import { BsGithub, BsGlobe2 } from "react-icons/bs";
+import { BiNote } from "react-icons/bi";
 import { useEffect, useMemo, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const ProjectContents = styled.section`
   max-width: 1260px;
@@ -95,7 +96,9 @@ function Project({ boldHandler }) {
         <Title>PROJECT</Title>
 
         <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
-          <ProjectImg></ProjectImg>
+          <Link to="/todolist">
+            <ProjectImg></ProjectImg>
+          </Link>
 
           <ProjectText>
             <TextTitle mb={"20px"}>투두리스트</TextTitle>
@@ -212,7 +215,7 @@ function Project({ boldHandler }) {
                 rel="noreferrer"
                 style={{ marginRight: "10px" }}
               >
-                <RiComputerLine />
+                <BsGlobe2 />
               </a>
               <a
                 href="https://github.com/jaeeedev/seoulbund"

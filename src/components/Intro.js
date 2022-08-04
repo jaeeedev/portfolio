@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const IntroContents = styled.section`
   position: relative;
@@ -10,6 +10,7 @@ const IntroContents = styled.section`
   gap: 40px;
   align-items: center;
   padding-top: 60px;
+  margin-bottom: 130px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column;
@@ -65,12 +66,15 @@ const DecoCircle = styled.div`
   left: -250px;
   width: 350px;
   height: 350px;
+  border: 1px double blue;
   border-radius: 50%;
   background: blue;
   z-index: -1;
+  transition: all 0.5s;
 `;
 
 function Intro({ boldHandler }) {
+  const [isHover, setIsHover] = useState(false);
   const introRef = useRef(null);
 
   const cb = ([entry]) => {

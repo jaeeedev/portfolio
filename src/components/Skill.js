@@ -29,7 +29,7 @@ const SkillBox = styled.div`
 const SkillItem = styled.div`
   width: 50%;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   align-items: center;
   gap: 40px;
 
@@ -46,7 +46,7 @@ const SkillImg = styled.img.attrs({ alt: "기술 이미지" })`
 `;
 
 const SkillText = styled.p`
-  line-height: 1.4;
+  line-height: 1.6;
   font-size: 15px;
 `;
 
@@ -63,7 +63,7 @@ function Skill({ boldHandler }) {
   const introIo = new IntersectionObserver(cb, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.7,
+    threshold: 0.8,
   });
 
   useEffect(() => {
