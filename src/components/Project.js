@@ -97,7 +97,7 @@ function Project({ boldHandler }) {
 
         <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
           <Link to="/todolist">
-            <ProjectImg></ProjectImg>
+            <ProjectImg />
           </Link>
 
           <ProjectText>
@@ -138,7 +138,12 @@ function Project({ boldHandler }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a href="#!">
+              <a
+                href="https://github.com/jaeeedev/lib"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ marginRight: "10px" }}
+              >
                 <BsGithub />
               </a>
             </TextDetail>
