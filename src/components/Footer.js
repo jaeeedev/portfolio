@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Wrapper = styled.section`
   background: #f3f3f3;
   padding: 30px;
-  height: 300px;
+  padding-top: 50px;
+  height: 500px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,8 @@ const Title = styled.h3`
 `;
 
 const Text = styled.p`
-  font-size: ${(props) => props.fz || "16px"};
+  font-size: ${(props) => props.fz || "18px"};
+  line-height: 1.6;
 `;
 
 function Footer({ boldHandler }) {
@@ -41,10 +43,14 @@ function Footer({ boldHandler }) {
     <Wrapper id="4" ref={contactRef}>
       <div>
         <Title>CONTACT</Title>
-        <Text>wldms1107@gmail.com</Text>
+        <Text>email : wldms1107@gmail.com</Text>
+        <Text>phone : 010-2502-4223</Text>
       </div>
       <div>
-        <Text fz={"14px"}>
+        <Text fz={"15px"}>
+          본 페이지는 크롬 브라우저에 최적화 되어 있습니다.
+        </Text>
+        <Text fz={"15px"}>
           본 포트폴리오의 모든 제작물은 상업적 목적과 무관합니다.
         </Text>
       </div>

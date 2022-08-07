@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import List from "../components/List";
+import PageHeader from "../components/PageHeader";
 
 const Head = styled.div`
   margin-bottom: 20px;
@@ -21,9 +22,10 @@ const SkillBadge = styled.span`
 `;
 
 const Container = styled.div`
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 16px;
+  padding-bottom: 50px;
 `;
 
 const ProjectSpan = styled.span`
@@ -38,24 +40,8 @@ const ProjectTitle = styled.h1`
 `;
 
 const ProjectText = styled.p`
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 15px;
-`;
-
-const MainImgBox = styled.img`
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  display: block;
-`;
-
-const ProjectImgBox = styled.div`
-  margin: 0 auto;
-  margin-bottom: 10px;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  background: #ccc;
 `;
 
 const ProjectImg = styled.img`
@@ -63,6 +49,7 @@ const ProjectImg = styled.img`
   width: 100%;
   height: 100%;
   margin-bottom: 20px;
+  flex: 1;
 `;
 
 const Code = styled.code`
@@ -73,21 +60,13 @@ const Code = styled.code`
   cursor: default;
 `;
 
-const SplitBox = styled.div`
-  display: flex;
-  gap: 30px;
-
-  @media screen and (max-width: 650px) {
-    flex-direction: column;
-  }
-`;
-
 //화면비 1.77777
 //여기는 기능이 거의 없어서 움짤만 이어서 넣어주고 텍스트는 간소하게
 
 function Pot() {
   return (
     <div>
+      <PageHeader />
       <Container>
         <Head>
           <ProjectSpan>프로젝트 설명</ProjectSpan>
@@ -104,9 +83,16 @@ function Pot() {
 
         <ProjectText>
           가상의 웹사이트(식물 정보 커뮤니티)를 기획하여 메인 페이지를
-          제작했습니다. 반응형 페이지로 제작되었습니다.
+          제작했습니다. 반응형 페이지로 제작되었습니다. 캐러셀 라이브러리 사용과
+          편리한 코드 작성을 위해 <Code>jQuery</Code>를 사용했습니다.
         </ProjectText>
-        <ProjectImg src="/imgs/pot2.jpg" alt="팟 화면" />
+        <br />
+        <ProjectImg src="/imgs/pot3.gif" alt="팟 화면" />
+        <ProjectImg src="/imgs/pot4.gif" alt="팟 화면" />
+        <ProjectImg src="/imgs/potmob.gif" alt="팟 화면" />
+        <ProjectText>
+          모바일 화면에서도 사용할 수 있도록 반응형으로 구현하였습니다.
+        </ProjectText>
       </Container>
     </div>
   );

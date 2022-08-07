@@ -114,11 +114,7 @@ function Skill({ boldHandler }) {
               onMouseEnter={up}
               onMouseLeave={down}
             />
-            <SkillText>
-              ES6 문법 사용
-              <br />
-              뭐라고 쓰지,,???
-            </SkillText>
+            <SkillText>ES6 문법 사용</SkillText>
           </SkillItem>
           <SkillItem>
             <SkillImg
