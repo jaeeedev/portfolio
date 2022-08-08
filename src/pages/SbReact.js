@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import List from "../components/List";
 import PageHeader from "../components/PageHeader";
+import PrevNext from "../components/PrevNext";
 
 const Head = styled.div`
   margin-bottom: 20px;
@@ -108,6 +109,7 @@ function SbReact() {
         </Head>
 
         <List />
+
         <MainImgBox />
 
         <SplitBox></SplitBox>
@@ -167,6 +169,13 @@ function SbReact() {
           파일을 따로 만들었습니다. 하지만 점차 리팩토링을 반복하여 페이지도
           재사용되도록 구현했습니다. <br />
         </ProjectText>
+
+        <PrevNext
+          prev={"seoulbund"}
+          next={"false"}
+          pText={"서울번드"}
+          nText={"false"}
+        />
       </Container>
     </div>
   );

@@ -101,7 +101,7 @@ function Project({ boldHandler }) {
         <Title>PROJECT</Title>
 
         <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
-          <ProjectLink to="/todolist">
+          <ProjectLink to="/todolist" target={"_blank"} rel="noreferrer">
             <ProjectImg src="/imgs/todomain.gif" alt="투두리스트 썸네일" />
           </ProjectLink>
 
@@ -119,7 +119,15 @@ function Project({ boldHandler }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <a
-                href="https://github.com/jaeeedev/todolist/tree/jaeeedev-patch-3"
+                href="https://jaeeedev.github.io/todo"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ marginRight: "10px" }}
+              >
+                <BsGlobe2 />
+              </a>
+              <a
+                href="https://github.com/jaeeedev/todo"
                 target={"_blank"}
                 rel="noreferrer"
               >
@@ -129,7 +137,7 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[1] = el)}>
-          <ProjectLink to="/pot">
+          <ProjectLink to="/pot" target={"_blank"} rel="noreferrer">
             <ProjectImg src="/imgs/pot01.jpg" alt="pot 썸네일" />
           </ProjectLink>
 
@@ -146,6 +154,14 @@ function Project({ boldHandler }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <a
+                href="https://jaeeedev.github.io/pot"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ marginRight: "10px" }}
+              >
+                <BsGlobe2 />
+              </a>
+              <a
                 href="https://github.com/jaeeedev/pot"
                 target={"_blank"}
                 rel="noreferrer"
@@ -157,7 +173,7 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[2] = el)}>
-          <ProjectLink to="/changwonlib">
+          <ProjectLink to="/changwonlib" target={"_blank"} rel="noreferrer">
             <ProjectImg src="/imgs/libmain.gif" alt="도서관 썸네일" />
           </ProjectLink>
 
@@ -194,7 +210,7 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[3] = el)}>
-          <ProjectLink to="/seoulbund">
+          <ProjectLink to="/seoulbund" target={"_blank"} rel="noreferrer">
             <ProjectImg src="/imgs/sbmain.png" alt="서울번드 썸네일" />
           </ProjectLink>
           <ProjectText>
@@ -212,6 +228,14 @@ function Project({ boldHandler }) {
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
               <a
+                href="https://jaeeedev.github.io/work"
+                target={"_blank"}
+                rel="noreferrer"
+                style={{ marginRight: "10px" }}
+              >
+                <BsGlobe2 />
+              </a>
+              <a
                 href="https://github.com/jaeeedev/work"
                 target={"_blank"}
                 rel="noreferrer"
@@ -223,7 +247,7 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[4] = el)}>
-          <ProjectLink to="seoulbundreact">
+          <ProjectLink to="seoulbundreact" target={"_blank"} rel="noreferrer">
             <ProjectImg src="/imgs/sbrmain.png" alt="서울번드 리액트 썸네일" />
           </ProjectLink>
           <ProjectText>

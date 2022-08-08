@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import List from "../components/List";
 import PageHeader from "../components/PageHeader";
+import PrevNext from "../components/PrevNext";
 
 const Head = styled.div`
   margin-bottom: 20px;
@@ -82,6 +83,7 @@ const SplitBox = styled.div`
 `;
 
 function Todo() {
+  window.scrollTo({ top: 0 });
   return (
     <div>
       <PageHeader />
@@ -141,6 +143,7 @@ function Todo() {
           <Code>submit</Code> 이벤트로 변경해 보는 등 코드를 계속적으로
           고쳐보면서 많은 지식들을 얻어갈 수 있었던 프로젝트였습니다.
         </ProjectText>
+        <PrevNext prev={"false"} next={"pot"} pText={"false"} nText={"pot"} />
       </Container>
     </div>
   );

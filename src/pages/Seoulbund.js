@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import List from "../components/List";
 import PageHeader from "../components/PageHeader";
+import PrevNext from "../components/PrevNext";
 
 const Head = styled.div`
   margin-bottom: 20px;
@@ -83,7 +84,7 @@ const Code = styled.code`
 `;
 
 function SeoulBund() {
-  // window.scrollTo({ top: 0 });
+  window.scrollTo({ top: 0 });
   return (
     <div>
       <PageHeader />
@@ -150,6 +151,12 @@ function SeoulBund() {
           집중이 중요하다는 것을 다시금 깨닫고 많은 공부가 되었던
           프로젝트였습니다.
         </ProjectText>
+        <PrevNext
+          prev="changwonlib"
+          next="seoulbundreact"
+          pText="도서관사업소"
+          nText="서울번드 리액트"
+        />
       </Container>
     </div>
   );

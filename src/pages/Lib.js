@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import List from "../components/List";
 import PageHeader from "../components/PageHeader";
+import PrevNext from "../components/PrevNext";
 
 const Head = styled.div`
   margin-bottom: 20px;
@@ -50,22 +51,6 @@ const ProjectText = styled.p`
   margin-bottom: 15px;
 `;
 
-const MainImgBox = styled.img`
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  display: block;
-`;
-
-const ProjectImgBox = styled.div`
-  margin: 0 auto;
-  margin-bottom: 10px;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  background: #ccc;
-`;
-
 const ProjectImg = styled.img`
   display: block;
   width: 100%;
@@ -96,6 +81,7 @@ const SplitBox = styled.div`
 //헤더 막 마우스 호버하는것도
 
 function Lib() {
+  window.scrollTo({ top: 0 });
   return (
     <div>
       <PageHeader />
@@ -143,6 +129,7 @@ function Lib() {
           처음으로 오픈 API를 적용해 보았습니다. 가상의 데이터가 아니라 실제로
           활용할 수 있는 기능을 추가하니 작은 부분이지만 굉장히 뿌듯했습니다.
         </ProjectText>
+        <PrevNext prev="pot" next="seoulbund" pText="pot" nText="서울번드" />
       </Container>
     </div>
   );
