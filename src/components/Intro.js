@@ -10,7 +10,7 @@ const IntroContents = styled.section`
   gap: 40px;
   align-items: center;
   padding-top: 60px;
-  margin-bottom: 130px;
+  margin-bottom: 200px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column;
@@ -20,18 +20,18 @@ const IntroContents = styled.section`
 `;
 
 const IntroGreetBox = styled.div`
-  flex: 1;
+  flex: 1.3;
   padding: 20px;
 `;
 
 const GreetText = styled.h2`
-  font-size: 40px;
+  font-size: 47px;
   font-weight: 700;
 `;
 
 const GreetDetail = styled.p`
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
 `;
 
@@ -54,10 +54,10 @@ const InfoTitle = styled.span`
   width: 100px;
   margin-right: 20px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 `;
 const InfoDetail = styled.span`
-  font-size: 16px;
+  font-size: 18px;
 `;
 
 const DecoCircle = styled.div`
@@ -74,7 +74,6 @@ const DecoCircle = styled.div`
 `;
 
 function Intro({ boldHandler }) {
-  const [isHover, setIsHover] = useState(false);
   const introRef = useRef(null);
 
   const cb = ([entry]) => {
@@ -86,7 +85,7 @@ function Intro({ boldHandler }) {
   const introIo = new IntersectionObserver(cb, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.35,
   });
 
   useEffect(() => {
@@ -99,14 +98,14 @@ function Intro({ boldHandler }) {
         <DecoCircle />
         <IntroGreetBox>
           <GreetText>안녕하세요</GreetText>
-          <GreetText>ㅇㅇ하는 프론트엔드 개발자</GreetText>
+          <GreetText>프론트엔드 개발자</GreetText>
           <GreetText>박지은입니다.</GreetText>
           <GreetDetail>
-            자기 소개 포부 적는 영역
+            코드를 통한 결과물을 빠르게 눈으로 확인할 수 있는 프론트엔드에 빠져
             <br />
-            아직 멘트를 안정함
+            개발을 시작하게 되었습니다. 더 좋은 코드가 무엇일지 항상 고민하고
+            공부합니다.
             <br />
-            가나다라마바사
           </GreetDetail>
         </IntroGreetBox>
 
@@ -121,7 +120,7 @@ function Intro({ boldHandler }) {
           </Info>
           <Info>
             <InfoTitle>학력</InfoTitle>
-            <InfoDetail>부경대학교 경영학부 졸업</InfoDetail>
+            <InfoDetail>부경대학교 경영학부 졸업예정</InfoDetail>
           </Info>
           <Info>
             <InfoTitle>연락처</InfoTitle>

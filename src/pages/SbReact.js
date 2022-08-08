@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import List from "../components/List";
+import PageHeader from "../components/PageHeader";
 
 const Head = styled.div`
   margin-bottom: 20px;
@@ -21,7 +22,7 @@ const SkillBadge = styled.span`
 `;
 
 const Container = styled.div`
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 16px;
 `;
@@ -38,7 +39,7 @@ const ProjectTitle = styled.h1`
 `;
 
 const ProjectText = styled.p`
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 15px;
 `;
 
@@ -47,6 +48,13 @@ const MainImgBox = styled.img`
   margin: 0 auto;
   margin-bottom: 20px;
   display: block;
+`;
+
+const TextTitle = styled.h3`
+  font-size: 30px;
+  font-weight: 800;
+  margin: 10px 0;
+  margin-top: 60px;
 `;
 
 const ProjectImgBox = styled.div`
@@ -62,6 +70,7 @@ const ProjectImg = styled.img`
   display: block;
   width: 100%;
   height: 100%;
+  margin-bottom: 20px;
 `;
 
 const Code = styled.code`
@@ -82,8 +91,10 @@ const SplitBox = styled.div`
 `;
 
 function SbReact() {
+  window.scrollTo({ top: 0 });
   return (
     <div>
+      <PageHeader />
       <Container>
         <Head>
           <ProjectSpan>프로젝트 설명</ProjectSpan>
@@ -100,50 +111,61 @@ function SbReact() {
         <MainImgBox />
 
         <SplitBox></SplitBox>
-        <ProjectText>
-          기존의 자바스크립트 프로젝트를 간소화하여 리액트로 제작하였습니다.
-          <br />
-        </ProjectText>
 
-        <ProjectImgBox />
+        <ProjectImg src="/imgs/sbrmenu.gif" alt="서울번드리액트 메뉴" />
         <ProjectText>
-          카테고리에 들어가면 제품들이 있습니다. <br /> <Code>filter</Code> 배열
-          메서드를 사용해 해당하는 소분류의 상품만 확인할 수 있도록
-          구현했습니다.
+          기존의 자바스크립트 프로젝트를 간소화하여 리액트로 제작했습니다.{" "}
+          <br />
+          카테고리에 들어가면 제품들이 있습니다. 상단의 소분류 버튼들을 클릭하면
+          해당하는 소분류의 제품들만 필터하여 볼 수 있습니다. 또한 가격이 낮은
+          순서로도 정렬하여 볼 수 있습니다. 소분류 필터링은 배열 메서드 중{" "}
+          <Code>filter</Code>를 사용했고 가격 정렬은 <Code>sort</Code>를
+          이용했는데, <Code>sort</Code>는 원본 배열을 변경한다는 점을 잊어 잠깐
+          헤맸습니다. 차이점을 다시 상기하고 원본 배열을 복사하여 정렬시켜
+          주었습니다.
           <br />
         </ProjectText>
-        <ProjectImgBox />
+        <ProjectImg src="/imgs/sbrpd.gif" alt="서울번드리액트 화면" />
         <ProjectText>
           제품을 클릭하면 상세 페이지로 들어갈 수 있습니다. <br />
           선택된 제품의 수량이 0개인 경우 1.5초간 모달창이 띄워지며 1개 이상의
-          제품이 담겼을 경우에는 다른 모달창이 나타납니다. <br />
-          장바구니로 이동하거나 현재 페이지에 머무를 수 있습니다. <br />
+          제품이 담겼을 경우에는 고정된 모달창이 나타납니다. <br />
           장바구니에 동일한 제품을 다시 담을 경우 전역 상태 배열에 동일한 상품이
           있는지를 확인하고 카운트를 추가합니다.
           <br />
-          하단에는 데이터 배열에서 같은 소분류의 제품군만 추려 랜덤하게
+          하단에는 데이터 배열에서 같은 소분류의 제품군만 필터하여 랜덤하게
           추천하도록 구현했습니다.
         </ProjectText>
-        <ProjectImgBox />
+        <ProjectImg src="/imgs/sbrcart.gif" alt="서울번드리액트 화면" />
         <ProjectText>
-          장바구니의 데이터들은 리덕스로 관리하는 전역 상태에 보관됩니다 <br />
-          장바구니 내에서도 제품 수량을 수정하거나 삭제할 수 있습니다. <br />
-          체크된 상품들의 총계가 우측 합계 영역에 나타납니다.
+          장바구니 내에서도 제품 수량을 수정하거나 삭제할 수 있습니다. 체크된
+          상품들의 총계가 우측 합계 영역에 나타납니다.
         </ProjectText>
-        <ProjectImgBox />
+        <ProjectImg src="/imgs/sbrsearch.gif" alt="서울번드리액트 화면" />
+
         <ProjectText>
           헤더의 검색창에 키워드를 입력하면 그 키워드를 가진 제품들을 화면에
           출력합니다. <br />
           검색했던 키워드는 쿼리스트링으로 붙여 제품 필터링에 활용하였습니다.
+          검색한 키워드가 한글이다보니 쿼리스트링을 받아오면 글자가 깨지는
+          현상이 발생하였는데 처음에는 <Code>decodeURI()</Code> 로 변환하여
+          사용하였다가 <Code>useSearchParams</Code> 훅의 <Code>get</Code>{" "}
+          메서드로 변경했습니다.
+        </ProjectText>
+
+        <TextTitle>회고</TextTitle>
+        <ProjectText>
+          쇼핑몰의 핵심적인 기능들을 구현해 보면서 리액트에 대해 더 익숙해지고{" "}
+          <Code>리액트 라우터</Code> 나 <Code>리덕스 툴킷</Code>같은 <br />
+          새로운 기술에 적응할 수 있는 좋은 경험이었습니다. 특히 기존
+          자바스크립트 프로젝트에서는 제품 상세 페이지를 하나만 만들어 아쉬움이
+          있었는데 이번 프로젝트에서는 라우팅을 통해 모든 상세 페이지에 접속할
+          수 있다는 점이 너무 즐거웠습니다.
           <br />
-          <br />
-          쇼핑몰의 핵심적인 기능들을 구현해 보면서 리액트에 대해 더 익숙해지고
-          리액트 라우터나 리덕스 툴킷같은 <br />
-          새로운 기술에 적응할 수 있는 좋은 경험이었습니다. 처음에는 라우팅에
-          익숙하지 않아 같은 레이아웃의 파일을 따로 만드는 등 컴포넌트 재사용에
-          애를 먹었습니다. 하지만 점차 필요한 지식들을 알아가면서 코드를
-          줄여나가고 페이지도 재사용할 수 있도록 고쳐나가는 과정에서 많이
-          성장하고 재미를 느꼈던 것 같습니다.
+          처음에는 라우팅에 익숙하지 않아 레이아웃이 완전히 동일한
+          테이블웨어-음료용품 페이지나 테이블웨어 필터-음료용품 필터 컴포넌트
+          파일을 따로 만들었습니다. 하지만 점차 리팩토링을 반복하여 페이지도
+          재사용되도록 구현했습니다. <br />
         </ProjectText>
       </Container>
     </div>
