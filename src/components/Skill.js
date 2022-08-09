@@ -9,6 +9,9 @@ const Wrapper = styled.section`
   @media screen and (max-width: 650px) {
     background: transparent;
   }
+  @media screen and (min-width: 1500px) {
+    margin-top: 280px;
+  }
 `;
 
 const SkillContents = styled.section`

@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 const ProjectContents = styled.section`
   max-width: 1260px;
-  margin: 150px auto;
-  margin-top: 30px;
+  margin: 30px auto;
   padding: 20px;
   padding-top: 80px;
 `;

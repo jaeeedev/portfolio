@@ -17,6 +17,10 @@ const IntroContents = styled.section`
     gap: 50px;
     align-items: flex-start;
   }
+
+  @media screen and (min-width: 1500px) {
+    margin-top: 80px;
+  }
 `;
 
 const IntroGreetBox = styled.div`
