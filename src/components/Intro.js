@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const IntroContents = styled.section`
   position: relative;
@@ -31,6 +31,7 @@ const IntroGreetBox = styled.div`
 const GreetText = styled.h2`
   font-size: 47px;
   font-weight: 700;
+  word-break: keep-all;
 `;
 
 const GreetDetail = styled.p`
@@ -55,7 +56,7 @@ const Info = styled.div`
   align-items: center;
 `;
 const InfoTitle = styled.span`
-  width: 100px;
+  min-width: 100px;
   margin-right: 20px;
   font-weight: 700;
   font-size: 20px;
