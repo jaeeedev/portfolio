@@ -41,7 +41,7 @@ const ProjectTitle = styled.h1`
 
 const ProjectText = styled.p`
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 `;
 
 const MainImgBox = styled.img`
@@ -147,6 +147,11 @@ function SbReact() {
           현상이 발생하였는데 처음에는 <Code>decodeURI()</Code> 로 변환하여
           사용하였다가 <Code>useSearchParams</Code> 훅의 <Code>get</Code>{" "}
           메서드로 변경했습니다.
+        </ProjectText>
+
+        <ProjectImg src="/imgs/page404.png" alt="서울번드리액트 화면" />
+        <ProjectText>
+          없는 페이지나 잘못된 경로로 접속하였을 경우 나타날 페이지입니다.
         </ProjectText>
 
         <TextTitle>회고</TextTitle>
