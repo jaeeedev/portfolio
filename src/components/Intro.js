@@ -9,7 +9,7 @@ const IntroContents = styled.section`
   display: flex;
   gap: 40px;
   align-items: center;
-  padding-top: 60px;
+  padding-top: 80px;
   margin-bottom: 200px;
 
   @media screen and (max-width: 650px) {
@@ -62,8 +62,8 @@ const InfoDetail = styled.span`
 
 const DecoCircle = styled.div`
   position: absolute;
-  top: -100px;
-  left: -250px;
+  top: -40px;
+  left: -220px;
   width: 350px;
   height: 350px;
   border: 1px double blue;
@@ -90,7 +90,7 @@ function Intro({ boldHandler }) {
   const introIo = new IntersectionObserver(cb, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.35,
+    threshold: 0.3,
   });
 
   useEffect(() => {

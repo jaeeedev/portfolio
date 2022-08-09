@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 const Wrapper = styled.section`
   background: #f3f3f3;
   padding-top: 5px;
+  margin-top: 50px;
 
   @media screen and (max-width: 650px) {
     background: transparent;
