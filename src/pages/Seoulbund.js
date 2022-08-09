@@ -48,17 +48,14 @@ const ProjectText = styled.p`
 const MainImgBox = styled.img`
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 20px;
   display: block;
 `;
 
-const ProjectImgBox = styled.div`
-  margin: 0 auto;
-  margin-bottom: 10px;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  background: #ccc;
+const MainLinkDesc = styled.p`
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
 const TextTitle = styled.h3`
@@ -100,23 +97,35 @@ function SeoulBund() {
           </SkillsBox>
         </Head>
         <List />
-        <MainImgBox src="/imgs/sbmain.gif" alt="메인 사진" />
+        <a
+          href="https://jaeeedev.github.io/work"
+          target={"_blank"}
+          rel="noreferrer"
+          style={{ marginRight: "10px" }}
+        >
+          <MainImgBox src="/imgs/sbmain.gif" alt="메인 사진" />
+        </a>
+
+        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
 
         <ProjectText>
           기존에 있는 웹사이트를 리뉴얼하여 만들어보는 프로젝트였습니다. 저는
           서울번드라는 식기 편집숍을 선택하였습니다.
           <br />
-          메인 페이지, 제품 상세 페이지, 장바구니 페이지 세가지를 구현했습니다.
+          <b>메인 페이지, 제품 상세 페이지, 장바구니 페이지</b> 세가지를
+          구현했습니다.
         </ProjectText>
 
         <ProjectImg src="/imgs/sblink.gif" alt="모바일 화면" />
         <ProjectText>
-          리뷰 영역을 클릭하면 제품 상세 페이지로 이동합니다. 리뷰 이미지들은
-          가장 최신의 리뷰 사진들을 가지고 와서 띄우는 형태입니다.
+          <b>포토 리뷰 영역</b>의 사진들을 클릭하면 제품 상세 페이지로
+          이동합니다. 리뷰 이미지들은 가장 최신의 리뷰 사진들을 가지고 와서
+          띄우는 형태입니다.
         </ProjectText>
         <ProjectImg src="/imgs/sbopt.gif" alt="모바일 화면" />
         <ProjectText>
-          옵션을 선택하여 담으면 장바구니에 담기게 됩니다.
+          옵션을 선택하여 담으면 장바구니에 담기고 모달창이 뜹니다. 현재
+          페이지에 머무르거나 장바구니 페이지로 이동할 수 있습니다.
         </ProjectText>
         <ProjectImg src="/imgs/sbrev.gif" alt="모바일 화면" />
         <ProjectText>
@@ -124,6 +133,13 @@ function SeoulBund() {
           4개를 초과할 경우 안내 메시지와 함께 버튼의 속성이{" "}
           <Code>disabled</Code> 로 변경되어 리뷰를 제출할 수 없습니다. 사진이
           있는 리뷰만 필터하여 볼 수 있습니다.
+          <br />
+          리뷰 기능은 이미지와 리뷰 텍스트를 데이터베이스로 전송하고 나서 화면을
+          리로드하는 방식으로 계획했으나 리로드가 먼저 실행되어 작성한 리뷰를
+          잃어버리는 문제가 있었습니다. 그래서 <Code>async</Code>{" "}
+          <Code>await</Code> 문법을 사용하게 되었습니다. 리뷰 기능을 구현하면서
+          비동기적으로 실행되는 코드가 많았던 이번 프로젝트에서 비동기와{" "}
+          <Code>Promise</Code> 에 대해 공부하는 계기가 되었습니다.
         </ProjectText>
         <ProjectImg src="/imgs/sbmob.gif" alt="모바일 화면" />
         <ProjectImg src="/imgs/sbcartmob.gif" alt="모바일 화면" />
@@ -138,18 +154,14 @@ function SeoulBund() {
           처음으로 여러 페이지를 가진 웹페이지를 제작하려니 고민이 많았습니다.
           무엇보다도 쇼핑몰이라면 장바구니 기능이 핵심일텐데 어떻게 정보를
           기억시킬까 고민을 하다가 외부 저장소를 선택하게 되었습니다. 최종적으로
-          장바구니와 리뷰가 파이어베이스에서 관리되도록 하고 요청은{" "}
-          <Code>fetch API</Code> 를 이용하기로 결정하였는데, 이 과정에서
-          비동기적인 통신이 발생하니 코드의 동작 순서에 많이 신경을 써야
-          했습니다. 데이터가 불러와지기 전이라 함수가 동작하지 않거나 콘솔을
-          찍었을 때 빈 배열이 출력되는 등 어려움이 많이 따랐던 것 같습니다. 이런
-          비동기적인 과정을 제어하기 위해서 <Code>async</Code>,{" "}
-          <Code>await</Code> 문법을 처음으로 사용해보았습니다. 또한 데이터를
-          보내고 수정하는 과정에서 <Code>GET</Code>, <Code>POST</Code>,{" "}
-          <Code>PUT</Code> 방식의 차이점에 대해서도 공부하게 되었습니다. 기획
-          단계에서 욕심이 앞섰으나 한정된 시간이 주어진 프로젝트에서는 선택과
-          집중이 중요하다는 것을 다시금 깨닫고 많은 공부가 되었던
-          프로젝트였습니다.
+          장바구니와 리뷰가 파이어베이스 실시간 데이터베이스에서 관리되도록 하고
+          요청은 <Code>fetch API</Code> 를 이용하기로 결정하였습니다. 비동기
+          요청을 동기적으로 제어하기 위해서 <Code>async</Code>,{" "}
+          <Code>await</Code> 문법도 처음으로 사용해보았습니다. 데이터가
+          불러와지기 전이라 함수가 동작하지 않거나 콘솔을 찍어봐도 빈 배열이
+          출력되는 등 우여곡절이 많았던 프로젝트였습니다. 데이터를 보내고
+          수정하는 과정에서 <Code>GET</Code>, <Code>POST</Code>,{" "}
+          <Code>PUT</Code> 방식의 차이점에 대해서도 공부하게 되었습니다.
         </ProjectText>
         <PrevNext
           prev="changwonlib"

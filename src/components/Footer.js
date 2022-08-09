@@ -4,7 +4,7 @@ const Wrapper = styled.section`
   background: #f3f3f3;
   padding: 30px;
   padding-top: 50px;
-  height: 500px;
+  height: 470px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@ function Footer({ boldHandler }) {
   const introIo = new IntersectionObserver(cb, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.3,
   });
 
   useEffect(() => {

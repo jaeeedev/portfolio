@@ -53,6 +53,19 @@ const ProjectImg = styled.img`
   flex: 1;
 `;
 
+const MainImgBox = styled.img`
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+`;
+
+const MainLinkDesc = styled.p`
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 30px;
+`;
+
 const Code = styled.code`
   background: #e9ecef;
   padding: 3px 5px;
@@ -88,7 +101,17 @@ function Pot() {
           </SkillsBox>
         </Head>
         <List />
-        <ProjectImg src="/imgs/pot01.jpg" alt="팟 화면" />
+
+        <a
+          href="https://jaeeedev.github.io/pot"
+          target={"_blank"}
+          rel="noreferrer"
+          style={{ marginRight: "10px" }}
+        >
+          <MainImgBox src="/imgs/pot01.jpg" alt="팟 화면" />
+        </a>
+
+        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
 
         <ProjectText>
           가상의 웹사이트(식물 정보 커뮤니티)를 기획하여 메인 페이지를

@@ -73,6 +73,11 @@ const DecoCircle = styled.div`
   transition: all 0.5s;
 `;
 
+const HoverText = styled.span`
+  font-size: 47px;
+  font-weight: 700;
+`;
+
 function Intro({ boldHandler }) {
   const introRef = useRef(null);
 
@@ -98,6 +103,7 @@ function Intro({ boldHandler }) {
         <DecoCircle />
         <IntroGreetBox>
           <GreetText>안녕하세요</GreetText>
+          <HoverText>성장하는</HoverText>
           <GreetText>프론트엔드 개발자</GreetText>
           <GreetText>박지은입니다.</GreetText>
           <GreetDetail>

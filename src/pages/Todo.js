@@ -47,8 +47,14 @@ const ProjectText = styled.p`
 const MainImgBox = styled.img`
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 20px;
   display: block;
+`;
+
+const MainLinkDesc = styled.p`
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
 const ProjectImg = styled.img`
@@ -100,7 +106,15 @@ function Todo() {
 
         <List />
 
-        <MainImgBox src="/imgs/todomain.gif" alt="투두리스트 이미지" />
+        <a
+          href="https://jaeeedev.github.io/todo"
+          target={"_blank"}
+          rel="noreferrer"
+          style={{ marginRight: "10px" }}
+        >
+          <MainImgBox src="/imgs/todomain.gif" alt="투두리스트 이미지" />
+        </a>
+        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
 
         <SplitBox></SplitBox>
         <ProjectText>
@@ -120,12 +134,8 @@ function Todo() {
         <ProjectText>
           수정 버튼을 클릭하면 우측 아이콘이 수정 취소 버튼과 완료 버튼으로
           변경됩니다.
-          <br /> 또한 텍스트 영역의 <Code>contenteditable</Code> 속성이 true로
-          변경되어 텍스트를 수정할 수 있습니다. 수정은 중간에 취소할 수
-          있습니다.
-          <br />
-          삭제 버튼을 클릭하면 해당 요소가 삭제됩니다.
-          <br />
+          <br /> 수정은 중간에 취소할 수 있습니다. 삭제 버튼을 클릭하면 해당
+          요소가 삭제됩니다.
         </ProjectText>
         <ProjectImg src="/imgs/todolocal.gif" alt="로컬스토리지" />
         <ProjectText>
@@ -137,9 +147,13 @@ function Todo() {
         <ProjectText>
           자바스크립트를 배우면서 가장 처음 무엇인가를 만들고 고쳐가며 흥미를
           얻었던 프로젝트입니다. 함수의 동작 순서나 변수를 선언하는 과정에 대해
-          깊이 생각할 수 있었던 계기가 되었습니다. 초기에 반복문으로 작성한
-          코드를 배열 메서드 <Code>map</Code>으로 변경해보거나, 리스트 추가
-          함수를 동작시키기 위해 버튼에 걸었던 <Code>click</Code> 이벤트를 폼의{" "}
+          깊이 생각할 수 있었던 계기가 되었습니다. 수정 기능은 텍스트 요소의{" "}
+          <Code>contenteditable</Code> 속성을 true로 변경하는 방식을 선택했는데,
+          텍스트 영역에서 바로 수정할 수 있으니 좋겠다고 생각했지만 autofocus가
+          되지 않아 사용감이 좋지 않았습니다. 다음에는 다른 방식으로
+          변경해보아야겠다고 생각했습니다. 초기에 반복문으로 작성한 코드를 배열
+          메서드 <Code>map</Code>으로 변경해보거나, 리스트 추가 함수를
+          동작시키기 위해 버튼에 걸었던 <Code>click</Code> 이벤트를 폼의{" "}
           <Code>submit</Code> 이벤트로 변경해 보는 등 코드를 계속적으로
           고쳐보면서 많은 지식들을 얻어갈 수 있었던 프로젝트였습니다.
         </ProjectText>

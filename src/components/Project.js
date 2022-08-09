@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ProjectContents = styled.section`
   max-width: 1260px;
-  margin: 120px auto;
+  margin: 150px auto;
   margin-top: 30px;
   padding: 20px;
   padding-top: 80px;
@@ -14,7 +14,6 @@ const ProjectContents = styled.section`
 
 const Title = styled.h3`
   font-size: 35px;
-  margin-bottom: 30px;
 `;
 
 const ProjectItemBox = styled.div`
@@ -34,7 +33,7 @@ const ProjectLink = styled(Link)`
 
 const ProjectImg = styled.img`
   display: block;
-  background: black;
+  background: white;
   min-height: 250px;
   object-fit: cover;
   transition: all 0.4s;
@@ -58,6 +57,12 @@ const TextDetail = styled.p`
   line-height: 1.5;
   font-size: ${(props) => props.fz || "15px"};
   margin-bottom: 10px;
+`;
+
+const PjText = styled.p`
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 `;
 
 function Project({ boldHandler }) {
@@ -99,6 +104,7 @@ function Project({ boldHandler }) {
     <div>
       <ProjectContents id="3">
         <Title>PROJECT</Title>
+        <PjText>프로젝트 이미지를 클릭하면 상세 포스트로 이동합니다.</PjText>
 
         <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
           <ProjectLink to="/todolist" target={"_blank"} rel="noreferrer">
@@ -180,7 +186,7 @@ function Project({ boldHandler }) {
           <ProjectText>
             <TextTitle mb={"20px"}>도서관사업소</TextTitle>
             <TextDetail>
-              기존의 웹사이트를 기획하고 제작하였습니다.
+              기존의 웹사이트를 리뉴얼 기획하고 제작하였습니다.
               <br />
               메인페이지를 제작하였고 반응형으로 구현했습니다.
             </TextDetail>

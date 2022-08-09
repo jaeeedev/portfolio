@@ -58,21 +58,25 @@ const ProjectImg = styled.img`
   margin-bottom: 30px;
 `;
 
+const MainImgBox = styled.img`
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+`;
+
+const MainLinkDesc = styled.p`
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 30px;
+`;
+
 const Code = styled.code`
   background: #e9ecef;
   padding: 3px 5px;
   font-size: 14px;
   border-radius: 3px;
   cursor: default;
-`;
-
-const SplitBox = styled.div`
-  display: flex;
-  gap: 30px;
-
-  @media screen and (max-width: 650px) {
-    flex-direction: column;
-  }
 `;
 
 //사이드바 열어서 메인바뀌는거 움짤찌기
@@ -97,7 +101,15 @@ function Lib() {
         </Head>
         <List />
 
-        <ProjectImg src="/imgs/libmain.gif" alt="도서관 화면" />
+        <a
+          href="https://jaeeedev.github.io/lib/subPages/main.html"
+          target={"_blank"}
+          rel="noreferrer"
+          style={{ marginRight: "10px" }}
+        >
+          <MainImgBox src="/imgs/libmain.gif" alt="도서관 화면" />
+        </a>
+        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
 
         <ProjectText>
           기존에 존재하는 웹사이트를 리뉴얼하는 프로젝트였습니다. <br /> 도서관
@@ -123,9 +135,9 @@ function Lib() {
         <TextTitle>회고</TextTitle>
         <ProjectText>
           중요한 이야기는 아니지만 도서관의 사진들은 모두 실제 도서관의 사진이
-          아닙니다. 원본 이미지가 너무 작아 unsplash에서 도서관 이미지를 가져다
-          썼습니다. 도서관이라는 장소에 맞게 발랄한 이미지를 강조한 페이지를
-          만들고 싶었지만 디자인적으로는 아쉬운 프로젝트입니다. <br />
+          아닙니다. 원본 이미지가 너무 작아 unsplash에서 다른 도서관 이미지를
+          가져다 썼습니다. 도서관이라는 장소에 맞게 발랄한 이미지를 강조한
+          페이지를 만들고 싶었지만 디자인적으로는 아쉬운 프로젝트입니다. <br />
           처음으로 오픈 API를 적용해 보았습니다. 가상의 데이터가 아니라 실제로
           활용할 수 있는 기능을 추가하니 작은 부분이지만 굉장히 뿌듯했습니다.
         </ProjectText>

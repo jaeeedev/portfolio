@@ -47,8 +47,14 @@ const ProjectText = styled.p`
 const MainImgBox = styled.img`
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 20px;
   display: block;
+`;
+
+const MainLinkDesc = styled.p`
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 30px;
 `;
 
 const TextTitle = styled.h3`
@@ -56,15 +62,6 @@ const TextTitle = styled.h3`
   font-weight: 800;
   margin: 10px 0;
   margin-top: 60px;
-`;
-
-const ProjectImgBox = styled.div`
-  margin: 0 auto;
-  margin-bottom: 10px;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  background: #ccc;
 `;
 
 const ProjectImg = styled.img`
@@ -80,15 +77,6 @@ const Code = styled.code`
   font-size: 14px;
   border-radius: 3px;
   cursor: default;
-`;
-
-const SplitBox = styled.div`
-  display: flex;
-  gap: 30px;
-
-  @media screen and (max-width: 650px) {
-    flex-direction: column;
-  }
 `;
 
 function SbReact() {
@@ -110,11 +98,17 @@ function SbReact() {
 
         <List />
 
-        <MainImgBox />
+        <a
+          href="https://illustrious-manatee-d6fc25.netlify.app/"
+          target={"_blank"}
+          rel="noreferrer"
+          style={{ marginRight: "10px" }}
+        >
+          <MainImgBox src="/imgs/sbrmenu.gif" alt="서울번드리액트 메뉴" />
+        </a>
 
-        <SplitBox></SplitBox>
+        <MainLinkDesc>클릭 시 프로젝트로 이동합니다.</MainLinkDesc>
 
-        <ProjectImg src="/imgs/sbrmenu.gif" alt="서울번드리액트 메뉴" />
         <ProjectText>
           기존의 자바스크립트 프로젝트를 간소화하여 리액트로 제작했습니다.{" "}
           <br />
