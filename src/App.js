@@ -1,23 +1,34 @@
-import Main from "./pages/Main";
 import { Route, Routes } from "react-router-dom";
-import Todo from "./pages/Todo";
-import SbReact from "./pages/SbReact";
-import SeoulBund from "./pages/Seoulbund";
-import Pot from "./pages/Pot";
-import Lib from "./pages/Lib";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Main from "./pages/Main";
+import ProductListPage from "./pages/ProductListPage";
+import Cart from "./pages/Cart";
+import ProductPage from "./pages/ProductPage";
+import NotFound from "./pages/NotFound";
+import Result from "./pages/Result";
 
 function App() {
   return (
-    <div>
+    <>
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/todolist" element={<Todo />} />
-        <Route path="/pot" element={<Pot />} />
-        <Route path="/changwonlib" element={<Lib />} />
-        <Route path="/seoulbundreact" element={<SbReact />} />
-        <Route path="/seoulbund" element={<SeoulBund />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/cups" element={<ProductListPage />}></Route>
+        <Route path="/cups/:title" element={<ProductPage loca={"cups"} />} />
+        <Route path="/tableware" element={<ProductListPage />}></Route>
+        <Route
+          path="/tableware/:title"
+          element={<ProductPage loca={"tableware"} />}
+        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/search" element={<Result />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </div>
+
+      <Footer />
+    </>
   );
 }
 
