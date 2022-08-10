@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { BsGithub, BsGlobe2 } from "react-icons/bs";
-import { BiNote } from "react-icons/bi";
+import { BsGithub } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
 import { useEffect, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -27,7 +27,7 @@ const ProjectItemBox = styled.div`
 `;
 
 const ProjectLink = styled(Link)`
-  flex: 1.4;
+  margin-right: 15px;
 `;
 
 const ProjectImg = styled.img`
@@ -48,7 +48,7 @@ const ProjectText = styled.div`
 const TextTitle = styled.span`
   display: block;
   margin-bottom: ${(props) => props.mb || "10px"};
-  font-size: ${(props) => props.fz || "17px"};
+  font-size: ${(props) => props.mb || "17px"};
   font-weight: 700;
 `;
 
@@ -56,12 +56,20 @@ const TextDetail = styled.p`
   line-height: 1.5;
   font-size: ${(props) => props.fz || "15px"};
   margin-bottom: 10px;
+  word-break: keep-all;
 `;
 
 const PjText = styled.p`
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 30px;
+`;
+
+const StyledA = styled.a`
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  flex: 1.4;
 `;
 
 function Project({ boldHandler }) {
@@ -103,12 +111,16 @@ function Project({ boldHandler }) {
     <div>
       <ProjectContents id="3">
         <Title>PROJECT</Title>
-        <PjText>프로젝트 이미지를 클릭하면 상세 포스트로 이동합니다.</PjText>
+        <PjText>이미지를 클릭하면 해당 프로젝트 페이지로 이동합니다.</PjText>
 
         <ProjectItemBox ref={(el) => (projectRef.current[0] = el)}>
-          <ProjectLink to="/todolist" target={"_blank"} rel="noreferrer">
+          <StyledA
+            href="https://jaeeedev.github.io/todo"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <ProjectImg src="/imgs/todomain.gif" alt="투두리스트 썸네일" />
-          </ProjectLink>
+          </StyledA>
 
           <ProjectText>
             <TextTitle mb={"20px"}>투두리스트</TextTitle>
@@ -123,14 +135,10 @@ function Project({ boldHandler }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a
-                href="https://jaeeedev.github.io/todo"
-                target={"_blank"}
-                rel="noreferrer"
-                style={{ marginRight: "10px" }}
-              >
-                <BsGlobe2 />
-              </a>
+              <ProjectLink to="/todolist" target={"_blank"} rel="noreferrer">
+                <CgNotes />
+              </ProjectLink>
+
               <a
                 href="https://github.com/jaeeedev/todo"
                 target={"_blank"}
@@ -142,9 +150,13 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[1] = el)}>
-          <ProjectLink to="/pot" target={"_blank"} rel="noreferrer">
+          <StyledA
+            href="https://jaeeedev.github.io/pot"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <ProjectImg src="/imgs/pot01.jpg" alt="pot 썸네일" />
-          </ProjectLink>
+          </StyledA>
 
           <ProjectText>
             <TextTitle mb={"20px"}>pot</TextTitle>
@@ -158,19 +170,14 @@ function Project({ boldHandler }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a
-                href="https://jaeeedev.github.io/pot"
-                target={"_blank"}
-                rel="noreferrer"
-                style={{ marginRight: "10px" }}
-              >
-                <BsGlobe2 />
-              </a>
+              <ProjectLink to="/pot" target={"_blank"} rel="noreferrer">
+                <CgNotes />
+              </ProjectLink>
+
               <a
                 href="https://github.com/jaeeedev/pot"
                 target={"_blank"}
                 rel="noreferrer"
-                style={{ marginRight: "10px" }}
               >
                 <BsGithub />
               </a>
@@ -178,9 +185,13 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[2] = el)}>
-          <ProjectLink to="/changwonlib" target={"_blank"} rel="noreferrer">
+          <StyledA
+            href="https://jaeeedev.github.io/lib/subPages/main.html"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <ProjectImg src="/imgs/libmain.gif" alt="도서관 썸네일" />
-          </ProjectLink>
+          </StyledA>
 
           <ProjectText>
             <TextTitle mb={"20px"}>도서관사업소</TextTitle>
@@ -195,19 +206,13 @@ function Project({ boldHandler }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a
-                href="https://jaeeedev.github.io/lib/subPages/main.html"
-                target={"_blank"}
-                rel="noreferrer"
-                style={{ marginRight: "10px" }}
-              >
-                <BsGlobe2 />
-              </a>
+              <ProjectLink to="/changwonlib" target={"_blank"} rel="noreferrer">
+                <CgNotes />
+              </ProjectLink>
               <a
                 href="https://github.com/jaeeedev/lib"
                 target={"_blank"}
                 rel="noreferrer"
-                style={{ marginRight: "10px" }}
               >
                 <BsGithub />
               </a>
@@ -215,9 +220,13 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[3] = el)}>
-          <ProjectLink to="/seoulbund" target={"_blank"} rel="noreferrer">
+          <StyledA
+            href="https://jaeeedev.github.io/work"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <ProjectImg src="/imgs/sbmain.png" alt="서울번드 썸네일" />
-          </ProjectLink>
+          </StyledA>
           <ProjectText>
             <TextTitle mb={"20px"}>서울번드</TextTitle>
             <TextDetail>
@@ -232,19 +241,14 @@ function Project({ boldHandler }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a
-                href="https://jaeeedev.github.io/work"
-                target={"_blank"}
-                rel="noreferrer"
-                style={{ marginRight: "10px" }}
-              >
-                <BsGlobe2 />
-              </a>
+              <ProjectLink to="/seoulbund" target={"_blank"} rel="noreferrer">
+                <CgNotes />
+              </ProjectLink>
+
               <a
                 href="https://github.com/jaeeedev/work"
                 target={"_blank"}
                 rel="noreferrer"
-                style={{ marginRight: "10px" }}
               >
                 <BsGithub />
               </a>
@@ -252,9 +256,13 @@ function Project({ boldHandler }) {
           </ProjectText>
         </ProjectItemBox>
         <ProjectItemBox ref={(el) => (projectRef.current[4] = el)}>
-          <ProjectLink to="seoulbundreact" target={"_blank"} rel="noreferrer">
+          <StyledA
+            href="https://illustrious-manatee-d6fc25.netlify.app/"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <ProjectImg src="/imgs/sbrmain.png" alt="서울번드 리액트 썸네일" />
-          </ProjectLink>
+          </StyledA>
           <ProjectText>
             <TextTitle mb={"20px"}>서울번드 리액트</TextTitle>
             <TextDetail>
@@ -271,17 +279,15 @@ function Project({ boldHandler }) {
 
             <TextTitle>보러 가기</TextTitle>
             <TextDetail fz={"23px"}>
-              <a
-                href="https://illustrious-manatee-d6fc25.netlify.app/"
+              <ProjectLink
+                to="seoulbundreact"
                 target={"_blank"}
                 rel="noreferrer"
-                style={{ marginRight: "10px" }}
               >
-                <BsGlobe2 />
-              </a>
+                <CgNotes />
+              </ProjectLink>
               <a
                 href="https://github.com/jaeeedev/seoulbund"
-                style={{ marginRight: "10px" }}
                 target={"_blank"}
                 rel="noreferrer"
               >

@@ -52,6 +52,7 @@ const SkillImg = styled.img.attrs({ alt: "기술 이미지" })`
 const SkillText = styled.p`
   line-height: 1.6;
   font-size: 15px;
+  word-break: keep-all;
 `;
 
 function Skill({ boldHandler }) {

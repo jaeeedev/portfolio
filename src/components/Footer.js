@@ -1,5 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
+import { MdOutlineEmail } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
+
 const Wrapper = styled.section`
   background: #f3f3f3;
   padding: 30px;
@@ -20,6 +23,10 @@ const Title = styled.h3`
 const Text = styled.p`
   font-size: ${(props) => props.fz || "18px"};
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 `;
 
 function Footer({ boldHandler }) {
@@ -44,8 +51,12 @@ function Footer({ boldHandler }) {
     <Wrapper id="4" ref={contactRef}>
       <div>
         <Title>CONTACT</Title>
-        <Text>email : wldms1107@gmail.com</Text>
-        <Text>phone : 010-2502-4223</Text>
+        <Text>
+          <MdOutlineEmail style={{ fontSize: "21px" }} /> wldms1107@gmail.com
+        </Text>
+        <Text>
+          <BsFillTelephoneFill style={{ fontSize: "20px" }} /> 010-2502-4223
+        </Text>
       </div>
       <div>
         <Text fz={"15px"}>
